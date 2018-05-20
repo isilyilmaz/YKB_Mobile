@@ -2,6 +2,7 @@ package com.example.kemalcanakyol.ykb_mobile.barcode;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
@@ -9,14 +10,18 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.pm.PackageManager;
+import android.graphics.Color;
 import android.hardware.Camera;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Layout;
 import android.util.DisplayMetrics;
 import android.util.Log;
+import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.google.android.gms.common.ConnectionResult;
@@ -49,6 +54,7 @@ public final class BarcodeCaptureActivity extends AppCompatActivity
     private CameraSource mCameraSource;
     private CameraSourcePreview mPreview;
 
+    private LinearLayout layout;
     /**
      * Initializes the UI and creates the detector pipeline.
      */
@@ -56,6 +62,11 @@ public final class BarcodeCaptureActivity extends AppCompatActivity
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
         setContentView(R.layout.activity_barcode_capture);
+
+        layout = findViewById(R.id.topLayout);
+
+        layout.setBackgroundColor(Color.TRANSPARENT);
+
 
         mPreview = (CameraSourcePreview) findViewById(R.id.preview);
 

@@ -10,7 +10,9 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        android:logo="@style/AppTheme"
+        >
         <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -18,12 +20,22 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+
         <activity
             android:name=".barcode.BarcodeCaptureActivity"
-            android:theme="@style/Theme.AppCompat.NoActionBar" />
-        <activity android:name=".MainActivity" />
+            android:theme="@style/Theme.AppCompat.Light" />
+
+
+        <activity android:name=".MainActivity" >
+           
+        </activity>
+
         <activity android:name=".CheckMarkActivity" />
-        <activity android:name=".PaymentInfoActivity" />
+
+        <activity android:name=".PaymentInfoActivity"
+            android:parentActivityName=".MainActivity"/>
+
     </application>
 
 </manifest>

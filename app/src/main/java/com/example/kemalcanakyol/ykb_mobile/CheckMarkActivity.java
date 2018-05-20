@@ -1,5 +1,6 @@
 package com.example.kemalcanakyol.ykb_mobile;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -7,12 +8,14 @@ import android.os.Bundle;
 import com.example.circulardialog.CDialog;
 import com.example.circulardialog.extras.CDConstants;
 
-public class CheckMarkActivity extends AppCompatActivity {
+public class CheckMarkActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_check_mark);
+
+        getActionBar().hide();
 
         String barcode = getIntent().getStringExtra("barcode");
 

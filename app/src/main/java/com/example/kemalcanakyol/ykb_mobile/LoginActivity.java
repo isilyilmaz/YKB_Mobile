@@ -1,6 +1,7 @@
 package com.example.kemalcanakyol.ykb_mobile;
 
 import android.app.ActionBar;
+import android.app.Activity;
 import android.content.Intent;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -10,7 +11,10 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 
-public class LoginActivity extends AppCompatActivity {
+import com.example.kemalcanakyol.ykb_mobile.barcode.BarcodeCaptureActivity;
+
+public class LoginActivity extends Activity {
+
 
     private Button rocketButton,closeButton,payButton;
     private ConstraintLayout mLayout;
@@ -21,6 +25,10 @@ public class LoginActivity extends AppCompatActivity {
         mLayout = findViewById(R.id.mainLayoutId);
         closeButton = findViewById(R.id.closeButton);
         payButton = findViewById(R.id.payButtonId);
+
+        getActionBar().hide();
+
+        //startActivity(new Intent(this,PaymentInfoActivity.class));
     }
 
     @Override

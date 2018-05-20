@@ -4,6 +4,7 @@
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:padding="2dp"
+    android:layout_margin="5dp"
     android:background="@color/cardview_dark_background"
     >
 
@@ -20,7 +21,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:padding="6dp">
+            android:padding="3dp">
 
             <ImageView
                 android:id="@+id/card_image"
@@ -32,7 +33,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:padding="6dp">
+                android:padding="4dp">
 
                 <TextView
                     android:id="@+id/card_name"

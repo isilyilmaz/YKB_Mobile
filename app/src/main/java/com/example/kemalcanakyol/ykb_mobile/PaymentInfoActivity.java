@@ -1,17 +1,29 @@
 package com.example.kemalcanakyol.ykb_mobile;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.ColorFilter;
+import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.ActionBarContainer;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.support.v7.widget.Toolbar;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -22,18 +34,62 @@ import java.util.List;
 public class PaymentInfoActivity extends Activity {
 
 
-
     private RecyclerView recycler_view;
     private List<CreditCard> credit_card_list;
     private TextView tarih;
     private TextView geriSayim;
     private TextView tutar_cvp;
     private Button btnOnayClicked;
+    private Button btnBackClicked;
+
+    private LinearLayout layout;
+    private ActionBarContainer actionBar;
+    private Toolbar toolbar;
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+
+        Toast.makeText(this,"geriye basıldı",Toast.LENGTH_LONG).show();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_payment_info);
+
+getActionBar().setTitle("Qr Code İle Ödeme Ekranı");
+getActionBar().setBackgroundDrawable(new ColorDrawable(Color.BLUE));
+        layout = findViewById(R.id.layout);
+
+        layout.setBackgroundColor(Color.WHITE);
+
+       /* toolbar = (Toolbar) findViewById(R.id.toolbar2);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("My titl");*/
+
+
+
+        Activity activity = this;
+        /*Toolbar toolbar = (Toolbar) activity.findViewById(R.id.toolbar2);
+        if (toolbar != null) {
+            activity.setTitle("Title");
+        }
+       // toolbar.setTitle("QR Kod ile Ödeme");
+
+        btnBackClicked = findViewById(R.id.btnBackClicked);
+
+        btnBackClicked.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(PaymentInfoActivity.this, LoginActivity.class);
+               // intent.putExtra("barcode",getIntent().getStringExtra("barcode"));
+                startActivity(intent);
+
+            }
+        });
+*/
+
 
 
         btnOnayClicked = findViewById(R.id.btnOnayClicked);

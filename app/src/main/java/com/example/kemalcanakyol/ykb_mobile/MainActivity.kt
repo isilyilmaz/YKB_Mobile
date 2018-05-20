@@ -3,6 +3,7 @@ package com.example.kemalcanakyol.ykb_mobile
 /**
  * Created by kemalcanakyol on 15.05.2018.
  */
+import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
@@ -16,7 +17,7 @@ import com.google.android.gms.common.api.CommonStatusCodes
 import com.google.android.gms.vision.barcode.Barcode
 import com.example.kemalcanakyol.ykb_mobile.barcode.BarcodeCaptureActivity
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : Activity() {
 
     private lateinit var mResultTextView: TextView
 
@@ -24,12 +25,13 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        actionBar!!.hide();
         mResultTextView = findViewById(R.id.result_textview)
 
-        findViewById<Button>(R.id.scan_barcode_button).setOnClickListener {
+
             val intent = Intent(applicationContext, BarcodeCaptureActivity::class.java)
             startActivityForResult(intent, BARCODE_READER_REQUEST_CODE)
-        }
+
 
 
 
